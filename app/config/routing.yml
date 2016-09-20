@@ -1,0 +1,5 @@
+oc_app:
+    resource: "@OCAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

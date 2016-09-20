@@ -1,0 +1,3 @@
+oc_app_homepage:
+    path:     /
+    defaults: { _controller: OCAppBundle:Default:index }
