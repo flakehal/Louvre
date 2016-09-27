@@ -1,4 +1,5 @@
 <?php
+// src/OC/AppBundle/Entity/Reservation.php
 
 namespace OC\AppBundle\Entity;
 
@@ -7,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Reservations
  *
- * @ORM\Table(name="reservations")
- * @ORM\Entity(repositoryClass="OC\AppBundle\Repository\ReservationsRepository")
+ * @ORM\Table(name="oc_reservation")
+ * @ORM\Entity(repositoryClass="OC\AppBundle\Repository\ReservationRepository")
  */
-class Reservations
+class Reservation
 {
     /**
      * @var int
@@ -29,18 +30,18 @@ class Reservations
     private $dateReservation;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="nbreBillets", type="integer")
-     */
-    private $nbreBillets;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
+
+    /**
+    * @ORM\OneToOne(targetEntity="OC\AppBundle\Entity\Visiteur", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $visiteur;
+
 
     public function __construct()
     {
@@ -82,30 +83,6 @@ class Reservations
     }
 
     /**
-     * Set nbreBillets
-     *
-     * @param integer $nbreBillets
-     *
-     * @return Reservations
-     */
-    public function setNbreBillets($nbreBillets)
-    {
-        $this->nbreBillets = $nbreBillets;
-
-        return $this;
-    }
-
-    /**
-     * Get nbreBillets
-     *
-     * @return int
-     */
-    public function getNbreBillets()
-    {
-        return $this->nbreBillets;
-    }
-
-    /**
      * Set email
      *
      * @param string $email
@@ -128,5 +105,28 @@ class Reservations
     {
         return $this->email;
     }
-}
 
+    /**
+     * Set visiteur
+     *
+     * @param \OC\AppBundle\Entity\Visiteur $visiteur
+     *
+     * @return Reservation
+     */
+    public function setVisiteur(Visiteur $visiteur)
+    {
+        $this->visiteur = $visiteur;
+
+        return $this;
+    }
+
+    /**
+     * Get visiteur
+     *
+     * @return \OC\AppBundle\Entity\Visiteur
+     */
+    public function getVisiteur()
+    {
+        return $this->visiteur;
+    }
+}

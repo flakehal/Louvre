@@ -1,3 +1,25 @@
-oc_app_homepage:
+oc_app_date_reservation:
     path:     /
-    defaults: { _controller: OCAppBundle:Default:index }
+    defaults:
+        _controller: OCAppBundle:Billeterie:index
+
+oc_app_reservation_billet:
+    path:     /reservation/
+    defaults:
+        _controller: OCAppBundle:Billeterie:reservation
+
+oc_app_resume_reservation:
+    path:     /resume/
+    defaults:    
+        _controller: OCAppBundle:Billeterie:resume
+
+
+oc_app_validation_reservation:
+    path:     /validation/
+    defaults:    
+        _controller: OCAppBundle:Billeterie:valide
+
+
+
+
+

@@ -1,16 +1,17 @@
 <?php
+// src/OC/AppBundle/Entity/Visiteur.php
 
 namespace OC\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Visiteurs
+ * Visiteur
  *
- * @ORM\Table(name="visiteurs")
- * @ORM\Entity(repositoryClass="OC\AppBundle\Repository\VisiteursRepository")
+ * @ORM\Table(name="oc_visiteur")
+ * @ORM\Entity(repositoryClass="OC\AppBundle\Repository\VisiteurRepository")
  */
-class Visiteurs
+class Visiteur
 {
     /**
      * @var int
@@ -24,7 +25,7 @@ class Visiteurs
     /**
      * @var string
      *
-     * @ORM\Column(name="Nom", type="string", length=255)
+     * @ORM\Column(name="nom", type="string", length=255)
      */
     private $nom;
 
@@ -52,7 +53,7 @@ class Visiteurs
     /**
      * @var bool
      *
-     * @ORM\Column(name="reduit", type="boolean")
+     * @ORM\Column(name="tarifReduit", type="boolean")
      */
     private $tarifReduit;
 

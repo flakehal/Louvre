@@ -1,4 +1,5 @@
 <?php
+// src/OC/AppBundle/Entity/Billet.php
 
 namespace OC\AppBundle\Entity;
 
@@ -7,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Billets
  *
- * @ORM\Table(name="billets")
- * @ORM\Entity(repositoryClass="OC\AppBundle\Repository\BilletsRepository")
+ * @ORM\Table(name="oc_billet")
+ * @ORM\Entity(repositoryClass="OC\AppBundle\Repository\BilletRepository")
  */
-class Billets
+class Billet
 {
     /**
      * @var int
